@@ -1,15 +1,14 @@
-# Dados em memória
+# SOS Desastres Naturais - Projeto Python (sem bibliotecas externas)
+
 voluntarios = []
 mensagens_contato = []
 
-# Validações manuais
 def validar_email(email):
     return "@" in email and "." in email and len(email) >= 6
 
 def validar_telefone(telefone):
     return telefone.isdigit() and len(telefone) >= 8
 
-# Funcionalidades
 def cadastrar_voluntario():
     print("\n--- Cadastro de Voluntário ---")
     nome = input("Nome completo: ").strip()
@@ -70,15 +69,72 @@ def faq():
     for p, r in perguntas:
         print(f"\n❓ {p}\n➡️  {r}")
 
-def recursos_e_abrigos():
-    print("\n--- RECURSOS E ABRIGOS ---")
-    abrigos = [
-        ("Abrigo Central", "1123456789", "Rua das Flores, 123", "Disponível"),
-        ("Abrigo Zona Leste", "1198765432", "Av. Esperança, 456", "Quase cheio"),
-        ("Abrigo Municipal", "1133332222", "Praça União, 789", "Lotado")
+def recursos_e_abrigos_interativo():
+    print("\n--- RECURSOS ESSENCIAIS DISPONÍVEIS ---")
+    recursos = [
+        "Água potável: Distribuição em pontos de apoio e abrigos.",
+        "Alimentos não perecíveis: Kits de emergência para famílias afetadas.",
+        "Energia elétrica emergencial: Geradores e painéis solares portáteis.",
+        "Atendimento médico: Postos móveis de primeiros socorros e equipes de saúde.",
+        "Produtos de higiene: Kits de higiene pessoal e limpeza.",
+        "Assistência psicológica: Apoio presencial e remoto para afetados.",
+        "Comunicação: Pontos de Wi-Fi e telefonia emergencial em abrigos."
     ]
-    for nome, tel, end, status in abrigos:
-        print(f"\n🏠 {nome}\n📞 {tel}\n📍 {end}\n📊 {status}")
+    for recurso in recursos:
+        print(f"✔️ {recurso}")
+
+    print("\n--- LISTA DE ABRIGOS TEMPORÁRIOS DISPONÍVEIS ---")
+    abrigos = [
+        {
+            "nome": "Escola Municipal Esperança",
+            "endereco": "Rua das Flores, 123, Centro",
+            "capacidade": "120 pessoas",
+            "status": "Disponível",
+            "contato": "(11) 99999-0001"
+        },
+        {
+            "nome": "Ginásio Poliesportivo Vida",
+            "endereco": "Avenida das Nações, 456, Bairro Novo",
+            "capacidade": "200 pessoas",
+            "status": "Quase lotado",
+            "contato": "(11) 99999-0002"
+        },
+        {
+            "nome": "Igreja São João",
+            "endereco": "Praça da Paz, 789, Vila Verde",
+            "capacidade": "80 pessoas",
+            "status": "Disponível",
+            "contato": "(11) 99999-0003"
+        },
+        {
+            "nome": "Centro Comunitário União",
+            "endereco": "Rua do Sol, 321, Jardim Luz",
+            "capacidade": "60 pessoas",
+            "status": "Lotado",
+            "contato": "(11) 99999-0004"
+        }
+    ]
+
+    for i, abrigo in enumerate(abrigos, 1):
+        print(f"{i}. {abrigo['nome']} ({abrigo['status']})")
+
+    opcao = input("Selecione um abrigo para ver mais detalhes (ou digite 0 para voltar): ").strip()
+
+    if opcao.isdigit():
+        indice = int(opcao)
+        if indice == 0:
+            return
+        elif 1 <= indice <= len(abrigos):
+            a = abrigos[indice - 1]
+            print(f"\n🏠 Nome: {a['nome']}")
+            print(f"📍 Endereço: {a['endereco']}")
+            print(f"👥 Capacidade: {a['capacidade']}")
+            print(f"📊 Status: {a['status']}")
+            print(f"📞 Contato: {a['contato']}")
+        else:
+            print("❌ Opção inválida.")
+    else:
+        print("❌ Entrada inválida. Digite apenas números.")
 
 def chatbot():
     print("\n--- CHATBOT ---")
@@ -94,7 +150,6 @@ def quem_somos():
     for nome, rm, linkedin, github in membros:
         print(f"\n👤 {nome}\n🎓 {rm}\n🔗 LinkedIn: {linkedin}\n💻 GitHub: {github}")
 
-# Menu principal
 def menu():
     while True:
         print("\n=== SOS DESASTRES NATURAIS ===")
@@ -123,7 +178,7 @@ def menu():
         elif opcao == "6":
             faq()
         elif opcao == "7":
-            recursos_e_abrigos()
+            recursos_e_abrigos_interativo()
         elif opcao == "8":
             chatbot()
         elif opcao == "9":
@@ -134,6 +189,5 @@ def menu():
         else:
             print("❌ Opção inválida. Tente novamente.")
 
-# Execução
 if __name__ == "__main__":
     menu()
