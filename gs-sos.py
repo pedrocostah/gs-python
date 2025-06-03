@@ -1,5 +1,3 @@
-# SOS Desastres Naturais - Projeto Python (sem bibliotecas externas)
-
 voluntarios = []
 mensagens_contato = []
 
@@ -42,32 +40,75 @@ def enviar_contato():
     print("✅ Mensagem enviada com sucesso!")
 
 def informacoes_doacao():
-    print("\n--- DOAÇÕES ---")
-    print("Chave PIX: sos@ajuda.org")
-    print("Locais de coleta: Escola Central, Praça da Liberdade, Ginásio Municipal")
+    print("\n--- DOAÇÃO EM DINHEIRO VIA PIX ---")
+    print("Contribua com a nossa causa via PIX. Sua doação será destinada diretamente às vítimas de desastres naturais.")
+    print("Chave PIX: 123.456.789.00")
+    print("Faça seu PIX agora mesmo e ajude quem precisa.")
+    print("Não há valores mínimos ou máximos. Cada contribuição conta!")
+
+    print("\n--- DOAÇÃO DE MANTIMENTOS E ROUPAS ---")
+    print("Doe mantimentos e roupas usadas em bom estado para quem precisa.")
+
+    print("\n📍 Pontos de Coleta:")
+    print("Centro de Coleta 1: Rua das Flores, 123 - Centro")
+    print("Centro de Coleta 2: Av. Brasil, 456 - Bairro Alto")
+    print("Centro de Coleta 3: Rua Vitória, 789 - Zona Norte")
 
 def como_pedir_socorro():
-    print("\n--- EMERGÊNCIA ---")
-    print("193 - Bombeiros | 192 - SAMU | 190 - Polícia")
-    print("Cruz Vermelha: contato@cruzvermelha.org")
-    print("ONU: +1-202-555-0111")
+    print("\n=== COMO PEDIR AJUDA EM CASO DE EMERGÊNCIA ===")
+    print("\n🆘 Em Caso de Emergência, Aja Rapidamente")
+    print("Se você estiver em uma situação de risco, siga as orientações abaixo para pedir ajuda imediatamente.")
+
+    print("\n📞 Contatos de Emergência Globais")
+    print("• Emergências Gerais: 112 (UE, Canadá, Austrália, etc.)")
+    print("• EUA/Canadá: 911")
+    print("• Brasil: 190 (Polícia), 192 (SAMU), 193 (Bombeiros)")
+    print("• Defesa Civil: 199 (Brasil), 112 (UE)")
+    print("• Emergências Médicas Globais: 112")
+    print("• Emergências Ambientais: 121 (alguns países)")
+
+    print("\n📌 Dicas para Pedir Socorro")
+    print("• Seja claro: tipo de emergência, local, nome.")
+    print("• Mantenha a calma e fale devagar.")
+    print("• Use apps oficiais com localização.")
+    print("• Em desastres, siga rotas seguras e fontes confiáveis.")
+
+    print("\n⚠️ Emergências Comuns e Ações:")
+    print("• Incêndios: Saia rápido e ligue 193. Evite elevador.")
+    print("• Acidentes: Chame 192, sinalize, não mova vítimas.")
+    print("• Desastres: Procure áreas altas e siga instruções da Defesa Civil.")
+
+    print("\n🌐 ONGs Mundiais")
+    print("• Cruz Vermelha Internacional - www.ifrc.org")
+    print("• Médicos Sem Fronteiras - www.msf.org / www.msf.org/contact-us")
 
 def monitoramento_tempo_real():
-    print("\n--- MONITORAMENTO ---")
-    print("🌊 Enchente - São Paulo/SP")
-    print("🔥 Incêndio Florestal - Amazônia")
-    print("🌍 Tremor de Terra - Turquia")
+    print("\n--- MONITORAMENTO EM TEMPO REAL ---")
+    print("🌊 Enchente - Irã")
+    print("🔥 Incêndio Florestal - Camarões")
+    print("🌍 Tremor de Terra - Argentina")
 
 def faq():
-    print("\n--- FAQ ---")
-    perguntas = [
-        ("O que é o SOS Desastres Naturais?", "Uma plataforma de apoio durante desastres."),
-        ("Como faço doações?", "Através de PIX ou postos de coleta."),
-        ("Meus dados estão seguros?", "Sim, não divulgamos suas informações."),
-        ("Posso ser voluntário mesmo morando longe?", "Sim, basta se cadastrar.")
+    print("\n=== FAQ - PERGUNTAS FREQUENTES ===")
+
+    perguntas_respostas = [
+        ("Como a plataforma ajuda durante eventos extremos?",
+         "Nossa plataforma oferece monitoramento em tempo real das áreas afetadas, um sistema de doações e voluntariado, um chatbot inteligente para orientação, contato de emergência e informações sobre recursos e abrigos disponíveis na região."),
+        ("Como funciona o chatbot integrado?",
+         "O chatbot utiliza inteligência artificial para oferecer orientações sobre prevenção, primeiros socorros e informações específicas para cada tipo de desastre, auxiliando a população antes, durante e após os eventos extremos. Basta clicar no ícone de diálogo na parte inferior à direita da página."),
+        ("Como são gerenciados os abrigos e recursos?",
+         "A plataforma permite que autoridades, equipes de resgate e vítimas visualizem em tempo real a disponibilidade de abrigos, recursos essenciais e status das operações, facilitando a tomada de decisões rápidas e eficazes."),
+        ("Como posso ajudar as vítimas?",
+         "Você pode doar qualquer quantia em dinheiro via PIX, mantimentos como roupas e alimentos não perecíveis ou se voluntariar ajudando abrigos e equipes de triagem."),
+        ("Quais tipos de eventos extremos são monitorados?",
+         "A plataforma monitora diversos eventos, incluindo chuvas intensas, tremores de terra, incêndios florestais e enchentes, utilizando dados de satélites e sensores IoT."),
+        ("O que fazer em casos de emergência?",
+         "Na página inicial, clique em 'Pedir socorro'; a página contará com diversos telefones de emergência e algumas dicas do que fazer nesses casos.")
     ]
-    for p, r in perguntas:
-        print(f"\n❓ {p}\n➡️  {r}")
+
+    for pergunta, resposta in perguntas_respostas:
+        print(f"\n❓ {pergunta}")
+        print(f"➡️  {resposta}")
 
 def recursos_e_abrigos_interativo():
     print("\n--- RECURSOS ESSENCIAIS DISPONÍVEIS ---")
@@ -85,34 +126,10 @@ def recursos_e_abrigos_interativo():
 
     print("\n--- LISTA DE ABRIGOS TEMPORÁRIOS DISPONÍVEIS ---")
     abrigos = [
-        {
-            "nome": "Escola Municipal Esperança",
-            "endereco": "Rua das Flores, 123, Centro",
-            "capacidade": "120 pessoas",
-            "status": "Disponível",
-            "contato": "(11) 99999-0001"
-        },
-        {
-            "nome": "Ginásio Poliesportivo Vida",
-            "endereco": "Avenida das Nações, 456, Bairro Novo",
-            "capacidade": "200 pessoas",
-            "status": "Quase lotado",
-            "contato": "(11) 99999-0002"
-        },
-        {
-            "nome": "Igreja São João",
-            "endereco": "Praça da Paz, 789, Vila Verde",
-            "capacidade": "80 pessoas",
-            "status": "Disponível",
-            "contato": "(11) 99999-0003"
-        },
-        {
-            "nome": "Centro Comunitário União",
-            "endereco": "Rua do Sol, 321, Jardim Luz",
-            "capacidade": "60 pessoas",
-            "status": "Lotado",
-            "contato": "(11) 99999-0004"
-        }
+        {"nome": "Escola Municipal Esperança", "endereco": "Rua das Flores, 123, Centro", "capacidade": "120 pessoas", "status": "Disponível", "contato": "(11) 99999-0001"},
+        {"nome": "Ginásio Poliesportivo Vida", "endereco": "Av. das Nações, 456, Bairro Novo", "capacidade": "200 pessoas", "status": "Quase lotado", "contato": "(11) 99999-0002"},
+        {"nome": "Igreja São João", "endereco": "Praça da Paz, 789, Vila Verde", "capacidade": "80 pessoas", "status": "Disponível", "contato": "(11) 99999-0003"},
+        {"nome": "Centro Comunitário União", "endereco": "Rua do Sol, 321, Jardim Luz", "capacidade": "60 pessoas", "status": "Lotado", "contato": "(11) 99999-0004"}
     ]
 
     for i, abrigo in enumerate(abrigos, 1):
@@ -148,7 +165,7 @@ def quem_somos():
         ("Júlia Menezes", "RM565568", "https://linkedin.com/in/julia-menezesf", "https://github.com/juliamenezesf")
     ]
     for nome, rm, linkedin, github in membros:
-        print(f"\n👤 {nome}\n🎓 {rm}\n🔗 LinkedIn: {linkedin}\n💻 GitHub: {github}")
+        print(f"\n👤 {nome}\n🎓 RM: {rm}\n🔗 LinkedIn: {linkedin}\n💻 GitHub: {github}")
 
 def menu():
     while True:
